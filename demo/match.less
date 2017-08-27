@@ -1,0 +1,63 @@
+// 匹配模式
+
+// 用CSS写一个三角形
+.sanjiao{
+  width:0;
+  height:0;
+  overflow:hidden;
+  border-width:10px;
+  border-color: transparent transparent red transparent;
+  border-style: dashed dashed solid dashed;
+}
+
+// 匹配模式
+.triangle(top:@w:5px,@c:#ccc){
+  border-width:@w;
+  border-color:transparent transparent @c transparent;
+  border-style: dashed solid
+}
+
+.triangle(bottom:@w:5px,@c:#ccc){
+  border-width:@w;
+  border-color:@c transparent transparent transparent;
+  border-style: solid dashed dashed dashed;
+}
+
+.triangle(right:@w:5px,@c:#ccc){
+  border-width:@w;
+  border-color: transparent transparent transparent @c;
+  border-style: dashed dashed dashed solid;
+}
+
+.triangle(@_,@w:5px,@c:#ccc){
+  width:0;
+  height:0;
+  overflow:hidden;
+}
+
+.sanjiao{
+  .triangle(bottom,100px);
+}
+
+// 匹配模式 - 定位
+.pos(r){
+  position: relative;
+}
+
+.pos(a){
+  position: absolute;
+}
+
+.pos(f){
+  position:fixed;
+}
+
+// 匹配模式 - 运算
+
+@test_01:300px;
+
+.box_02{
+  width: @test_01 + 20 * 5;
+  color: #ccc -10;
+}
+

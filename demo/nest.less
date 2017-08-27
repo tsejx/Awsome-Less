@@ -1,0 +1,35 @@
+// 嵌套规则
+
+.list {
+  width: 600px;
+  margin: 30px auto;
+  padding: 0;
+  list-style: none;
+
+  li {
+    height: 30px;
+    line-height: 30px;
+    background-color: pink;
+    margin-bottom: 5px;
+  }
+
+  a {
+   float: left;
+   // & 代表他的上一层选择器
+   &:hover {
+
+   }
+  }
+
+  span {
+    float: left;
+  }
+}
+
+.border_arg(@w:30px,@c:red,@xx:solid){
+  border:@arguments;
+}
+
+.test_arguments{
+  .border_arg(40px);
+}

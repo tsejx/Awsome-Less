@@ -1,0 +1,63 @@
+/*混合(Mixin)*/
+
+// 变量
+
+@red:'red';
+
+body{
+  background-color:@red;
+}
+
+// 变量的插值调用
+@type: top;
+div {
+  margin-@{type}: 20px;
+}
+
+// 混合Mixin(相当于是一个函数)
+.backRed(){ // 相当于函数定义
+  background-color: 'red';
+}
+
+body{
+  font-size:12px;
+  .backRed(); // 相当于函数调用
+}
+
+// 混合-带参数的混合
+
+.backColor(@color){
+  background-color: @color;
+}
+
+body{
+  width: 100%;
+  .backColor(); // 定义的带参数混合调用的时候不传参，考拉会报错
+  .backColor('blue');
+}
+
+// 混合-可设定默认值
+.backColor(@color:'red'){
+  background-color:@color;
+}
+
+body{
+  width: 100%;
+  .backColor(); // 这里会走默认值
+  .backColor('blue');
+}
+
+// 混合的例子
+
+.border_radius(@radius:5px){
+  -webkit-border-radius:@radius;
+  -moz-border-radius:@radius;
+  border-radius:@radius;
+}
+
+.radius_test{
+  width:100px;
+  height: 40px;
+  background-color:green;
+  .border_radius()
+}

@@ -1,0 +1,10 @@
+// 循环
+
+.loop(@index) when (@index =<5){ // 当@index <=5 的时候
+  .col-@(index){ // 变量插值调用，调用了@index
+  width: 100px;
+  }
+  .loop(@index +1); // 循环的迭代条件，每次@index+1
+}
+
+.loop(1); // 传入@index初始值，开始循环
