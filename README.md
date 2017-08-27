@@ -1,15 +1,20 @@
 ﻿# Awesome-Less 
 
+## 概念
+
+* Less CSS是一种动态样式语言，属于CSS预处理语言的一种，它使用类似CSS的语法，为CSS赋予了动态语言的特性，如变量、继承、运算、函数等，更方便CSS的编写和维护。
+* Less CSS可以在多种语言、环境中使用，包括浏览器端、桌面客户端、服务端。
+
 ## 语法
 
-### 注释
+### 注释Annotations
 
 ```css
 // 模板注释，这里的注释转换成CSS后将删除
 /* CSS 注释语法 转换为CSS后仍然保留 */
 ```
 
-### 定义变量
+### 变量Variable
 
 >   
 1. 将需要重复使用或经常修改的值定义为变量，需要使用的地方引用
@@ -21,9 +26,11 @@
 ```css
 // @变量名:变量值
 @backgroundColor: #f5f5f5;
+
 // 变量计算
 @nice-blue: #5b83ad;
 @light-blue: @nice-blue + #666;
+
 // 定义一个变量名为变量
 @fontSize: 30px;
 @bottomFontSize: "fontSize";
@@ -48,7 +55,7 @@ body {
 * tips
     * 在less中变量只能被定义一次，类似常量，之后定义的会覆盖前面定义的变量
     
-### 嵌套Nested Rules
+### 嵌套Nested
 
 > 如果在CSS中经常使用子代选择器，那么使用Less嵌套语法会更方便
 
@@ -105,13 +112,13 @@ body {
 * tips
   * 在less中`&`区别很大，有&时解析的是同一个元素或此元素的伪类，没有&解析的是后代元素。
   
-### Mixin
+### 混合Mixin
 
 > 混入也叫“混入参数”，混合其实就是一种嵌套，允许将一个类嵌入到另一个类中，而被嵌入的类称为一个变量（混合也像一个带有参数的function）
 
 * less
 
-```css
+```less
 // 用一个类定义CSS,然后把整个类作为一个变量来使用，嵌入到另一个类中当属性
 // 不定义任何参数 .roundedCorners()
 .rounderdCorners(@radius: 20px){
@@ -173,7 +180,7 @@ body {
 }
 ```
 
-### import
+### import引用
 
 > 通过@import将多个less文件合并
 
