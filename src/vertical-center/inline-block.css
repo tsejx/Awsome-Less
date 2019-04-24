@@ -1,0 +1,10 @@
+.parent::after,
+.child {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.parent::after {
+    content: '';
+    height: 100%;
+}

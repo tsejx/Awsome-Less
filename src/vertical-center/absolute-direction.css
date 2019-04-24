@@ -1,0 +1,11 @@
+.parent {
+    position: relative;
+}
+
+.child {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 50px;
+    margin: auto 0;
+}

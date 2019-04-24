@@ -1,0 +1,5 @@
+.parent {
+    height: 100px;
+    /* 与 height 等值 */
+    line-height: 100px;
+}
